@@ -57,8 +57,15 @@ class TodoAddPage extends StatelessWidget{
     @override
     Widget build(BuildContext context){
         return Scaffold(
-                body: Center(),
-                )
+                body: Center(
+                        child: FlatButton(
+                                onPressed: (){
+                                    Navigator.of(context).pop();
+                                },
+                                child: Text('リスト追加画面（クリックで戻る）'),
+                                ),
+                        ),
+                );
     }
 }
 
