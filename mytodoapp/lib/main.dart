@@ -81,12 +81,33 @@ class TodoAddPage extends StatelessWidget{
     @override
     Widget build(BuildContext context){
         return Scaffold(
-                body: Center(
-                        child: FlatButton(
-                                onPressed: (){
-                                    Navigator.of(context).pop();
-                                },
-                                child: Text('リスト追加画面（クリックで戻る）'),
+                appBar: AppBar(title: Text('リスト追加'),),
+                body: Container(
+                        padding: EdgeInsets.all(64),
+                        child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                    TextField(),
+                                    Container(
+                                            width: double.infinity,
+                                            child: RaisedButton(
+                                                    color: Colors.blue,
+                                                    onPressed: (){
+
+                                                    },
+                                                    child: Text('リスト追加',style: TextStyle(color:Colors.white)),
+                                            ),
+                                    ),
+                                    Container(
+                                            width: double.infinity,
+                                            child: FlatButton(
+                                                    onPressed: (){
+                                                        Navigator.of(context).pop();
+                                                    },
+                                                    child: Text('キャンセル'),
+                                                    ),
+                                            )
+                                ],
                                 ),
                         ),
                 );
